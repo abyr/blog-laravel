@@ -41,8 +41,6 @@
                                 <i class="fa fa-trash-o"></i>
                             </button>
                         </form>
-
-
                     </td>
                 </tr>
             @empty
