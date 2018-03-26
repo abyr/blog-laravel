@@ -43,7 +43,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li>
                                     <a href="{{route('admin.category.index')}}">Categories</a>
-                                    <a href="#">Materials</a>
+                                    <a href="{{route('admin.article.index')}}">Materials</a>
                                 </li>
                             </ul>
                         </li>
@@ -57,7 +57,9 @@
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
+                                   role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
