@@ -13,10 +13,10 @@
     <hr>
 
     <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right" >
-        <i class="fa fa-plus-square-o"></i>Create category
+        <i class="fa fa-plus-square-o"></i> Create category
     </a>
 
-    <table class="tanle table-stripped">
+    <table class="table table-stripped">
         <thead>
             <th>Name</th>
             <th>Post</th>
@@ -28,9 +28,21 @@
                     <td>{{$category->title}}</td>
                     <td>{{$category->published}}</td>
                     <td>
-                        <a href="{{route('admin.category.edit', $category)}}">
-                            <i class="fa fa-edit"></i>
-                        </a>
+                        <form onsubmit="if(confirm('Delete?')) { return true } else { return false } "
+                            action="{{route('admin.category.destroy', $category)}}" method="post">
+                            <input type="hidden" name="_method" value="DELETE"/>
+                            {{ csrf_field() }}
+
+                            <a class="btn btn-default" href="{{route('admin.category.edit', $category)}}">
+                                <i class="fa fa-edit"></i>
+                            </a>
+
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa fa-trash-o"></i>
+                            </button>
+                        </form>
+
+
                     </td>
                 </tr>
             @empty
